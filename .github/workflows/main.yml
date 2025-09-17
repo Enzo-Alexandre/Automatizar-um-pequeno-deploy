@@ -1,0 +1,25 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]   # Executa sempre que houver push na branch principal
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout do código
+      uses: actions/checkout@v3
+
+    - name: Rodando o build (teste simples)
+      run: echo "Deploy bem-sucedido 🚀"
+
+    - name: Gerando artefato
+      run: echo "Arquivo gerado com sucesso" > resultado.txt
+
+    - name: Salvando artefato
+      uses: actions/upload-artifact@v3
+      with:
+        name: resultado
+        path: resultado.txt
