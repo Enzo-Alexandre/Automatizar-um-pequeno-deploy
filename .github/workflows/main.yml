@@ -10,7 +10,7 @@ jobs:
 
     steps:
     - name: Checkout do código
-      uses: actions/checkout@v3
+      uses: actions/upload-artifact@v4
 
     - name: Rodando o build (teste simples)
       run: echo "Deploy bem-sucedido 🚀"
