@@ -10,16 +10,16 @@ jobs:
 
     steps:
     - name: Checkout do código
-      uses: actions/upload-artifact@v4
+      uses: actions/checkout@v4
 
     - name: Rodando o build (teste simples)
       run: echo "Deploy bem-sucedido 🚀"
 
-    - name: Gerando artefato
+    - name: Criando arquivo de resultado
       run: echo "Arquivo gerado com sucesso" > resultado.txt
 
     - name: Salvando artefato
       uses: actions/upload-artifact@v4
       with:
         name: resultado
-        path: resultado.txt
+        path: resultado.txt   # Aqui apontamos para o arquivo criado
